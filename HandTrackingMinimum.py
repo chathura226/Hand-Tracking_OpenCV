@@ -30,14 +30,16 @@ while True:
         # so we loop through it
         for handLms in results.multi_hand_landmarks:
             # mpDraw.draw_landmarks(img,handLms)  #this will draw point in each land marks for each hand
-            # mpDraw.draw_landmarks(img, handLms,mpHands.HAND_CONNECTIONS)  # this will draw points connected with each land marks for each hand
+            mpDraw.draw_landmarks(img, handLms,mpHands.HAND_CONNECTIONS)  # this will draw points connected with each land marks for each hand
 
-            # id - related to index number related to hand landmark (eg 4=>tip)
+            # id - related to index number related to hand landmark (eg 4=>tip of thumb)
             for id, lm in enumerate(handLms.landmark):
                 # print(id, lm)  # id -landmark index (0-21) and lm give x,y,z cordinate as a percentge
                 h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 print(id,cx,cy)
+                if id==4 :
+                    cv2.circle(img,(cx,cy),11,(255,0,255),cv2.FILLED)
 
 
     # calculating fps
