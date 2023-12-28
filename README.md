@@ -8,6 +8,9 @@
 - Also by this, you can get the coordinates of the 21 landmarks of a hand (defined by Google mediapipe) as a list and use in other projects <br>
 - Works well even only using the CPU
 
+## Small Projects using above module
+- Volume control using hand gesture ( screenshots and gifs are available below) 
+
 
 ## Some Screenshots: <br>
 ![Image 1](./ScreenShots/01.png)
@@ -17,6 +20,12 @@
 ![Image 3](./ScreenShots/03.png)
 <br><br>
 
-21 Landmarks:
+21 Landmarks:<br>
 ![Image 4](./hand_landmarks.png)
 <br><br>
+
+## Project Captures
+Volume Control using gestures : <br>
+![Image 5](./ScreenShots/04.png)
+<br><br>
+![Image 6](./ScreenShots/gestureVolume.gif)
