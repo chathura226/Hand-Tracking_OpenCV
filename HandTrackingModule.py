@@ -1,5 +1,8 @@
 # HandTracking custom module for getting list of positions of landmarks
 
+# By this we can get a list of cordinates of landmarks of a hand with the
+# relavant index number for landmark given by mediapipe
+
 import cv2
 import mediapipe as mp
 import time
@@ -63,12 +66,13 @@ class HandDetector:
                 # print(id, cx, cy)
                 landmarkList.append([id, cx, cy])
 
-                if draw :
+                if draw:
                     cv2.circle(img, (cx, cy), 5, (255, 0, 255), cv2.FILLED)
 
         return landmarkList
 
-#dummy code to be run if not imported as a module
+
+# dummy code to be run if not imported as a module
 def main():
     # framerate
     prevTime = 0
@@ -80,9 +84,11 @@ def main():
     while True:
         success, img = cap.read()
 
-        img=detector.findHands(img)
-        landmarkList=detector.findPosition(img)
-        if len(landmarkList)!=0:
+        img = detector.findHands(img)
+        # getting list of landmarks related to hand =0
+        # hand =1 will give landmark list of other hand
+        landmarkList = detector.findPosition(img)
+        if len(landmarkList) != 0:
             print(landmarkList[4])
 
         # calculating fps

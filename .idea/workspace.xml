@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a152e755-40ae-4531-98dc-717ac716636a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HandTrackingModule.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usageOfModule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HandTrackingModule.py" beforeDir="false" afterPath="$PROJECT_DIR$/HandTrackingModule.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,7 @@
   "keyToString": {
     "Python.HandTrackingMinimum.executor": "Run",
     "Python.HandTrackingModule.executor": "Run",
+    "Python.usageOfModule.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -73,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1703740717822</updated>
       <workItem from="1703740720319" duration="3083000" />
-      <workItem from="1703743818208" duration="4846000" />
+      <workItem from="1703743818208" duration="5652000" />
     </task>
     <servers />
   </component>
@@ -81,7 +83,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HandTracking$HandTrackingModule.coverage" NAME="HandTrackingModule Coverage Results" MODIFIED="1703749701241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HandTracking$usageOfModule.coverage" NAME="usageOfModule Coverage Results" MODIFIED="1703750254324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HandTracking$HandTrackingModule.coverage" NAME="HandTrackingModule Coverage Results" MODIFIED="1703750511292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/HandTracking$HandTrackingMinimum.coverage" NAME="HandTrackingMinimum Coverage Results" MODIFIED="1703745474358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
