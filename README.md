@@ -10,6 +10,7 @@
 
 ## Small Projects using above module
 - Volume control using hand gesture ( screenshots and gifs are available below) 
+- Finger Counter ( screenshots and gifs are available below) 
 
 
 ## Some Screenshots: <br>
@@ -25,7 +26,11 @@
 <br><br>
 
 ## Project Captures
-Volume Control using gestures : <br>
+### Volume Control using gestures :
 ![Image 5](./ScreenShots/04.png)
 <br><br>
 ![Image 6](./ScreenShots/gestureVolume.gif)
+### Finger Counter :
+![Image 7](./ScreenShots/fingerCount.png)
+<br><br>
+![Image 8](./ScreenShots/fingerCount.gif)
