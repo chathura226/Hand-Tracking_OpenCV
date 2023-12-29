@@ -59,17 +59,21 @@ while True:
                 upFingers.append(0) # append 0 if finger is down
 
 
-        print(upFingers)
+        # print(upFingers)
+        totalFingers = upFingers.count(1)
+        # print(totalFingers)
 
-    # slicing for putting overlay image
-    # have to resize since images have high resolution than 200
-    img[0:200, 0:200] = overlayList[0]
+        # slicing for putting overlay image
+        # have to resize since images have high resolution than 200
+        img[0:200, 0:200] = overlayList[totalFingers]
 
+        cv2.rectangle(img,(20,225),(170,425),(0,255,0),cv2.FILLED)
+        cv2.putText(img,str(totalFingers),(45,375),cv2.FONT_HERSHEY_SIMPLEX,5,(255,0,0),20)
     # calculating and putting the framerate
     currTime = time.time()
     fps = 1 / (currTime - prevTime)
     prevTime = currTime
-    cv2.putText(img, f'FPS: {int(fps)}', (10, 230), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 0), 2)
+    cv2.putText(img, f'FPS: {int(fps)}', (480, 50), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 0, 0), 2)
 
     cv2.imshow('Result', img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
