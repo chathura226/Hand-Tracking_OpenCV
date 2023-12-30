@@ -6,7 +6,7 @@
 import cv2
 import mediapipe as mp
 import time
-
+import math
 
 class HandDetector:
     # these constructor parameter are the parameter for mediapipe handobject initialization
@@ -54,7 +54,12 @@ class HandDetector:
         return img
 
     # to find positions of landmarks for a particular hand (only one hand)
-    def findPosition(self, img, handNo=0, draw=True):
+    def findPosition(self, img, handNo=0, draw=True,boundingBox=False):
+
+        # for bounding box
+        xList=[]
+        yList=[]
+        bBox=[]
 
         self.landmarkList = []
 
@@ -68,13 +73,24 @@ class HandDetector:
                 # print(id, lm)  # id -landmark index (0-21) and lm give x,y,z cordinate as a percentge
                 h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
+                xList.append(cx)
+                yList.append(cy)
+
                 # print(id, cx, cy)
                 self.landmarkList.append([id, cx, cy])
 
                 if draw:
                     cv2.circle(img, (cx, cy), 5, (255, 0, 255), cv2.FILLED)
 
-        return self.landmarkList
+            # bounding box
+            xMin, xMax = min(xList), max(xList)
+            yMin, yMax = min(yList), max(yList)
+            bBox = xMin, yMin, xMax, yMax
+
+        if boundingBox:
+            return self.landmarkList,bBox
+        else:
+            return self.landmarkList
 
     # return a list showing whether fingers are up or not ( 1- for open, 0- for close)
     def fingersUp(self):
@@ -95,6 +111,28 @@ class HandDetector:
                 upFingers.append(0)  # append 0 if finger is down
 
         return upFingers
+
+
+    # to find distance between fingers
+    # returns length, img and coordinae tuples of each index and center point
+    def findDistance(self,landmarkID1,landmarkID2,img,draw=True):
+        # x y coordinates seperately for thumb and index finger
+        x1, y1 = self.landmarkList[landmarkID1][1], self.landmarkList[landmarkID1][2]
+        x2, y2 = self.landmarkList[landmarkID2][1], self.landmarkList[landmarkID2][2]
+
+        # getting center
+        cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
+
+        if draw:
+            # drawing cirlce on them and line connecting them
+            cv2.circle(img, (x1, y1), 15, (255, 0, 255), cv2.FILLED)
+            cv2.circle(img, (x2, y2), 15, (255, 0, 255), cv2.FILLED)
+            cv2.line(img, (x1, y1), (x2, y2), (255, 0, 255), 3)
+            cv2.circle(img, (cx, cy), 5, (0, 255, 0), cv2.FILLED)
+
+        # taking length between the fingers
+        length = math.hypot(x2 - x1, y2 - y1)
+        return length,img,[(x1,y1),(x2,y2),(cx,cy)]
 
 
 # dummy code to be run if not imported as a module
