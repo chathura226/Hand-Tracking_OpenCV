@@ -1,7 +1,7 @@
 # Hand-Tracking_OpenCV
 
 ## Real-time Hand Tracking using Google media-pipe with OpenCV and Python
-## Custom module to get coordinates of landmarks of a hand
+## Custom module from scratch to get coordinates of landmarks of a hand
 
 
 - This contains a custom Python module that can be used to detect and track hands in real-time<br>
@@ -9,9 +9,17 @@
 - Works well even only using the CPU
 
 ## Small Projects using above module
-- Virtual Painter  ( screenshots and gifs are available below) 
-- Volume control using hand gesture ( screenshots and gifs are available below) 
-- Finger Counter ( screenshots and gifs are available below) 
+### 1. Virtual Painter  
+- Use index and middle finger to select the tool
+- use index finger to draw adn erase after selection
+- ( screenshots and gifs are available below) 
+### 2. Volume control using hand gesture (Advanced)
+- Use thumb and index finger to indicate the volume percentage
+- Fold the ring finger to set the volume at desired level
+- ( screenshots and gifs are available below) 
+### 3. Finger Counter 
+- Can use to count from 0 to 5
+- ( screenshots and gifs are available below) 
 
 
 ## Some Screenshots: <br>
@@ -24,15 +32,15 @@
 <br><br>
 
 ## Project Captures
-### VVirtual Paint :
+### 1. Virtual Paint :
 ![Image virtualPaint](./ScreenShots/virtualPaint.png)
 <br>Gif:<br>
 ![Image virtualPaint2](./ScreenShots/virtualPaint.gif)
-### Volume Control using gestures :
-![Image 5](./ScreenShots/04.png)
+### 2. Volume Control using gestures :
+![Image 5](./ScreenShots/gestureVolumeAdvance.png)
 <br>Gif:<br>
-![Image 6](./ScreenShots/gestureVolume.gif)
-### Finger Counter :
+![Image 6](./ScreenShots/gestureVolumeAdvance.gif)
+### 3. Finger Counter :
 ![Image 7](./ScreenShots/fingerCount.png)
 <br>Gif:<br>
 ![Image 8](./ScreenShots/fingerCount.gif)
