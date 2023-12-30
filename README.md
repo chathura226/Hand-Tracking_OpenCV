@@ -9,6 +9,7 @@
 - Works well even only using the CPU
 
 ## Small Projects using above module
+- Virtual Painter  ( screenshots and gifs are available below) 
 - Volume control using hand gesture ( screenshots and gifs are available below) 
 - Finger Counter ( screenshots and gifs are available below) 
 
@@ -18,14 +19,15 @@
 <br><br>
 ![Image 2](./ScreenShots/02.png)
 <br><br>
-![Image 3](./ScreenShots/03.png)
-<br><br>
-
 21 Landmarks:<br>
 ![Image 4](./hand_landmarks.png)
 <br><br>
 
 ## Project Captures
+### VVirtual Paint :
+![Image virtualPaint](./ScreenShots/virtualPaint.png)
+<br><br>
+![Image virtualPaint2](./ScreenShots/virtualPaint.gif)
 ### Volume Control using gestures :
 ![Image 5](./ScreenShots/04.png)
 <br><br>
