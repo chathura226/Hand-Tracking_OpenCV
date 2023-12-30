@@ -36,7 +36,7 @@ camHeight = 480
 
 ####################
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(3, camWidth)
 cap.set(4, camHeight)
 
