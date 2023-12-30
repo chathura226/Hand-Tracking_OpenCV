@@ -19,6 +19,11 @@ class HandDetector:
         self.minDetectionConfidence = minDetectionConfidence
         self.minTrackingConfidence = minTrackingConfidence
 
+        # landmark index in order (tip,dip) for each finger
+        self.tipAndPipLandmarkIDs = [(4, 2), (8, 6), (12, 10), (16, 14), (20, 18)]
+
+        self.landmarkList = []
+
         # creating obj from class hand
         self.mpHands = mp.solutions.hands
         self.hands = self.mpHands.Hands(self.mode,
@@ -51,7 +56,7 @@ class HandDetector:
     # to find positions of landmarks for a particular hand (only one hand)
     def findPosition(self, img, handNo=0, draw=True):
 
-        landmarkList = []
+        self.landmarkList = []
 
         # if hand is detected
         if self.results.multi_hand_landmarks:
@@ -64,12 +69,32 @@ class HandDetector:
                 h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 # print(id, cx, cy)
-                landmarkList.append([id, cx, cy])
+                self.landmarkList.append([id, cx, cy])
 
                 if draw:
                     cv2.circle(img, (cx, cy), 5, (255, 0, 255), cv2.FILLED)
 
-        return landmarkList
+        return self.landmarkList
+
+    # return a list showing whether fingers are up or not ( 1- for open, 0- for close)
+    def fingersUp(self):
+        upFingers = []
+        # for thumb openness
+        # for thumb we check the x coordinate of tip and dip of thumb
+        if self.landmarkList[4][1] < self.landmarkList[3][1]:
+            upFingers.append(1)
+        else:
+            upFingers.append(0)
+
+        # checking y coredinate of landmark index for tip and pip of fingers to check whether open or close
+        # except for thumb ( since closed thump doesnt show tip below pip)
+        for tipID, pipID in self.tipAndPipLandmarkIDs[1:]:
+            if self.landmarkList[tipID][2] < self.landmarkList[pipID][2]:
+                upFingers.append(1)  # append 1 if finger is up
+            else:
+                upFingers.append(0)  # append 0 if finger is down
+
+        return upFingers
 
 
 # dummy code to be run if not imported as a module
