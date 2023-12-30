@@ -26,13 +26,13 @@
 ## Project Captures
 ### VVirtual Paint :
 ![Image virtualPaint](./ScreenShots/virtualPaint.png)
-<br><br>
+<br>Gif:<br>
 ![Image virtualPaint2](./ScreenShots/virtualPaint.gif)
 ### Volume Control using gestures :
 ![Image 5](./ScreenShots/04.png)
-<br><br>
+<br>Gif:<br>
 ![Image 6](./ScreenShots/gestureVolume.gif)
 ### Finger Counter :
 ![Image 7](./ScreenShots/fingerCount.png)
-<br><br>
+<br>Gif:<br>
 ![Image 8](./ScreenShots/fingerCount.gif)
